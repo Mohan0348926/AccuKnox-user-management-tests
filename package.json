@@ -1,0 +1,14 @@
+{
+  "name": "accuknox-user-management-tests",
+  "version": "1.0.0",
+  "main": "UsermanagementE2EFlow.spec.js",
+  "scripts": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.15.23"
+  }
+}
