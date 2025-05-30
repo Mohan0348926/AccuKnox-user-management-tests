@@ -9,7 +9,9 @@ import {searchuser} from '../PageObjects/searchuser.po';
 import {edituser} from'../PageObjects/edituser.po';
 import  edituserdata from '../testdata/edituser.json';
 import {validateuser} from '../PageObjects/validateuser.po';
-import validatedata from '../testdata/validateuser.json'
+import validatedata from '../testdata/validateuser.json';
+import {Deleteuser} from '../PageObjects/deleteuser.po';
+import deluserdata from '../testdata/deleteuser.json';
 //This test is for navigate to Admin page
 test('Verify to navigate to adminpage',async({page})=>{
     const login=new loginpage(page)
@@ -66,7 +68,6 @@ test('Verify to validate  the updated user',async({page})=>{
     const login=new loginpage(page)
     const navigate=new navigatetoadmin(page)
     const search=new searchuser(page)
-    const edit=new edituser(page)
     const validate=new validateuser(page)
     await login.launchApplication()
     await login.LoginwithCreds(logindata.username,logindata.password)
@@ -76,3 +77,16 @@ test('Verify to validate  the updated user',async({page})=>{
     await validate.validateuser()
 })
     
+test('Verify to delete  the updated user',async({page})=>{
+    const login=new loginpage(page)
+    const navigate=new navigatetoadmin(page)
+    const search=new searchuser(page)
+    const del=new Deleteuser(page)
+
+    await login.launchApplication()
+    await login.LoginwithCreds(logindata.username,logindata.password)
+    await login.VerifyLoginsucess()
+    await navigate.clickonadmin()
+    await search.Deletesearch(deluserdata.delusername)
+    await del.deletetheuser()
+})
