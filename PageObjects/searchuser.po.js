@@ -6,7 +6,7 @@ exports.searchuser= class searchuser{
         this.validateEnterusername=page.locator('(//input[@class="oxd-input oxd-input--active"])[2]')
         this.searchbutton=page.locator('//button[@type="submit"]')
         this.userfound=page.locator('//span[text()="(1) Record Found"]')
-        this.usernamefound=page.locator('//div[text()="Sharwin9"]')
+        this.usernamefound=page.locator('//div[text()="Sharwinmanu20"]')
         this.searchdeleteusername=page.locator('(//input[@class="oxd-input oxd-input--active"])[2]')
     }
     async Searchuser(username){
